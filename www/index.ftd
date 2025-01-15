@@ -1,1 +1,58 @@
--- ftd.text: hello CDP
+-- ds.page: FifthTry-CDP: Common Data Project
+align-content: top-left
+theme-switcher: true
+fastn-badge: true
+inset: $ds.spaces.inset-square.zero
+
+-- ds.section-row:
+align-content: left
+outer-background.solid: $ds.colors.background.step-2
+spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-square.small
+
+    -- ds.row:
+    width: hug-content
+
+        -- ftd.image:
+        src: $ft-logo
+        link: https://www.fifthtry.com
+
+        -- ds.copy-regular: CDP: Common Data Project
+
+    -- end: ds.row
+
+    -- ds.row:
+    width: hug-content
+
+    -- ds.copy-regular: [About](/about/)
+
+    -- end: ds.row
+
+-- end: ds.section-row
+
+-- ds.section-row:
+
+-- ds.column:
+
+-- ds.heading-large: Own Your Data
+
+-- end: ds.column
+
+-- end: ds.section-row
+
+-- ds.section-row:
+align-content: left
+outer-background.solid: $ds.colors.background.step-2
+spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-square.medium
+
+-- ds.fine-print: Copyright 2025, FifthTry, Inc
+
+-- end: ds.section-row
+
+-- end: ds.page
+
+
+-- ftd.image-src ft-logo:
+light: https://www.fifthtry.com/-/ui.fifthtry.com/assets/fifthtry.png
+dark: https://www.fifthtry.com/-/ui.fifthtry.com/assets/fifthtry-dark.png
