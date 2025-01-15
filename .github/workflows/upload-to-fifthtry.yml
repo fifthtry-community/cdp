@@ -1,0 +1,20 @@
+name: Upload to FifthTry
+
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - www/**
+      - .github/workflows/upload-to-fifthtry.yml
+
+
+jobs:
+  upload-to-fifthtry:
+    runs-on: ubuntu-latest
+    env:
+      FIFTHTRY_SITE_WRITE_TOKEN: ${{ secrets.FIFTHTRY_SITE_WRITE_TOKEN }}
+    steps:
+      - run: actions/checkout@v2
+      - run: sh -c "$(curl -fsSL https://fastn.com/install.sh)"
+      - run: cd www && fastn upload ft-cdp
