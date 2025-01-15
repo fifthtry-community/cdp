@@ -15,6 +15,6 @@ jobs:
     env:
       FIFTHTRY_SITE_WRITE_TOKEN: ${{ secrets.FIFTHTRY_SITE_WRITE_TOKEN }}
     steps:
-      - run: actions/checkout@v2
+      - run: actions/checkout@v4
       - run: sh -c "$(curl -fsSL https://fastn.com/install.sh)"
       - run: cd www && fastn upload ft-cdp
