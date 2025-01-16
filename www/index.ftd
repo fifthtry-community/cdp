@@ -1,39 +1,4 @@
--- ds.page: FifthTry-CDP: Common Data Project
-align-content: top-left
-theme-switcher: true
-fastn-badge: true
-inset: $ds.spaces.inset-square.zero
-
--- ds.section-row:
-align-content: left
-outer-background.solid: $ds.colors.background.step-2
-spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.medium
-
-    -- ds.row:
-    width: hug-content
-
-        -- ftd.image:
-        src: $ft-logo
-        link: https://www.fifthtry.com
-
-        -- ds.copy-regular: CDP: Common Data Project
-
-    -- end: ds.row
-
-    -- ds.row:
-    width: hug-content
-
-    -- ds.copy-regular: [Github](https://github.com/FifthTry-CDP)
-
-    -- end: ds.row
-
--- end: ds.section-row
-
-
--- ds.section-column:
-align-content: top-left
-inset: $ds.spaces.inset-square.medium
+-- ui.page: Common Data Project
 
 -- ds.heading-large: Own Your Data
 
@@ -52,8 +17,9 @@ personal data, for example your notes, bookmarks, mails, bank account details,
 shopping history, tax filings, share and asset data, flights, your health data
 and so on.
 
-Then we have domain like organisation, which keeps track of employee directory,
-teams, salary and payroll data, financial accounting data, and so on.
+Then we have domain like [organisation](/organisation/), which keeps track of
+employee directory, teams, salary and payroll data, financial accounting data,
+and so on.
 
 We are planning to add a lot of domains, ecommerce domain for ecommerce related
 company data, school domain,  for everything needed to run a school, hospital
@@ -121,22 +87,5 @@ The best way to get started is by asking for help in the
 lots of docs below of how to get started on your own, but the Discord is the
 best place to ask for help.
 
--- end: ds.section-column
 
-
--- ds.section-row:
-align-content: left
-outer-background.solid: $ds.colors.background.step-2
-spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.medium
-
--- ds.fine-print: Copyright 2025, FifthTry, Inc
-
--- end: ds.section-row
-
--- end: ds.page
-
-
--- ftd.image-src ft-logo:
-light: https://www.fifthtry.com/-/ui.fifthtry.com/assets/fifthtry.png
-dark: https://www.fifthtry.com/-/ui.fifthtry.com/assets/fifthtry-dark.png
+-- end: ui.page

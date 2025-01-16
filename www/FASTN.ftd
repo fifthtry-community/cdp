@@ -4,3 +4,4 @@
 -- fastn.dependency: design-system.fifthtry.site
 
 -- fastn.auto-import: design-system.fifthtry.site as ds
+-- fastn.auto-import: cdp.fifthtry.com/ui

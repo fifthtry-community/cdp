@@ -1,0 +1,2 @@
+-- import: cdp.fifthtry.com/ui/page as _
+export: page, logo

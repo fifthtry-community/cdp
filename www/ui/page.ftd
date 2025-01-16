@@ -1,0 +1,73 @@
+-- component page:
+caption title: Common Data Project
+children content:
+
+-- ds.page: $title(a = $page.title)
+align-content: top-left
+theme-switcher: true
+fastn-badge: true
+inset: $ds.spaces.inset-square.zero
+
+
+-- ds.section-row:
+align-content: left
+outer-background.solid: $ds.colors.background.step-2
+spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-square.medium
+
+    -- ds.row:
+    width: hug-content
+
+        -- ftd.image:
+        src: $ft-logo
+        link: https://www.fifthtry.com
+
+        -- ds.copy-regular: CDP: Common Data Project
+        link: /
+
+    -- end: ds.row
+
+    -- ds.row:
+    width: hug-content
+
+    -- ds.copy-regular: [Github](https://github.com/FifthTry-CDP)
+
+    -- end: ds.row
+
+-- end: ds.section-row
+
+
+-- ds.section-column:
+align-content: top-left
+inset: $ds.spaces.inset-square.medium
+content: $page.content
+
+-- end: ds.section-column
+
+-- ds.section-row:
+align-content: left
+outer-background.solid: $ds.colors.background.step-2
+spacing: $ds.spaces.horizontal-gap.space-between
+inset: $ds.spaces.inset-square.medium
+
+-- ds.fine-print: Copyright 2025, FifthTry, Inc
+
+-- end: ds.section-row
+
+-- end: ds.page
+
+-- end: page
+
+
+
+
+-- string title(a):
+string a:
+
+"FifthTry-CDN: " + a
+
+
+
+-- ftd.image-src ft-logo:
+light: https://www.fifthtry.com/-/ui.fifthtry.com/assets/fifthtry.png
+dark: https://www.fifthtry.com/-/ui.fifthtry.com/assets/fifthtry-dark.png
