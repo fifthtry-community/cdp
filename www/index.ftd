@@ -24,7 +24,7 @@ inset: $ds.spaces.inset-square.small
     -- ds.row:
     width: hug-content
 
-    -- ds.copy-regular: [About](/about/)
+    -- ds.copy-regular: [Github](https://github.com/FifthTry-CDP)
 
     -- end: ds.row
 
@@ -33,8 +33,83 @@ inset: $ds.spaces.inset-square.small
 -- ds.section-row:
 
 -- ds.column:
+align-content: top-left
 
 -- ds.heading-large: Own Your Data
+
+At FifthTry, our mission is complete data and software ownership for everything
+that runs your life. Today we are too dependent on companies, who use our
+dependence on their services to their own benefit.
+
+FifthTry-CDP: Command Data Project aims to put you in complete control of your
+data. This project defines data models and set of headless data APIs to interact
+with that data, so application developers can create open data apps, that work
+with each other, and you remain firmly in control of your data.
+
+This project is organised in various domains, we have dedicated domain for
+personal data, for example your notes, bookmarks, mails, bank account details,
+shopping history, tax filings, share and asset data, flights, your health data
+and so on.
+
+Then we have domain like organisation, which keeps track of employee directory,
+teams, salary and payroll data, financial accounting data, and so on.
+
+We are planning to add a lot of domains, ecommerce domain for ecommerce related
+company data, school domain,  for everything needed to run a school, hospital
+domain and so on.
+
+
+-- ds.heading-medium: Open Source
+
+All code and data definitions in this project are open source under MIT license,
+and can be used for free in perpetuity for personal and commercial use.
+
+
+-- ds.heading-medium: Headless Everything
+
+Think of FifthTry-CDP as a suite of open source backends that you can easily
+deploy on your laptop, server of your choice, or on FifthTry. We plan to even
+let you run these on your mobile phones tomorrow. An open source backend that
+*you* can run easily. That provides community reviewed updates, so your code
+is maintained and security reviewed. And with excellent documentation for how
+to run it, how to back it up, how to upgrade it.
+
+And this backend is headless API for your company, your school, your personal
+life, your ecommerce website and so on.
+
+-- ds.heading-medium: Open Schema
+
+The databases supported by FifthTry-CDP are SQLite and PostgreSQL. In fact you
+can move between the two when your requirements scale up or scale down. The
+schema is fully open and well documented. You can write your custom dashboard
+or data import/export scripts, automations etc based on this schema, or you
+can pick from the market of applications that target the FifthTry CDP.
+
+-- ds.heading-medium: FifthTry Marketplace
+
+FifthTry curates open source, and commercial applications that work with
+FifthTry-CDP, so you have access to a variety of app for your domain, apps that
+you can reasonably easily replace with other apps, because the data by those
+apps are not locked in those apps because they are hosted by someone else, or
+because the data format of those apps are inscrutable, not well documented or
+supported by any ecosystem.
+
+FifthTry Marketplace apps are either open source, in which case they can run
+anywhere, on FifthTry hosting, or any hosting of your choice. FifthTry
+Marketplace also contains FifthTry-CDP compatible proprietary and paid apps,
+which you will only run on FifthTry hosting, but you still keep to own the
+data of those apps.
+
+-- ds.heading-medium: Power of `fastn`
+
+FifthTry-CDP headless backends for each domain are available as `fastn` package.
+`fastn` is a programming language and fullstack web framework for building web
+sites and APIs. `fastn` is designed for non developers, so its quite easy to
+learn, and provides a uniform application structure for all open source, so they
+all are configured uniformly, they all share the same middlewares,
+authentication system, rule engines, backend database, etc etc. Anyone can become
+`fastn` developers in few weeks and maintain these apps.
+
 
 -- end: ds.column
 
