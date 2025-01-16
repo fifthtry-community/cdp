@@ -8,7 +8,7 @@ inset: $ds.spaces.inset-square.zero
 align-content: left
 outer-background.solid: $ds.colors.background.step-2
 spacing: $ds.spaces.horizontal-gap.space-between
-inset: $ds.spaces.inset-square.small
+inset: $ds.spaces.inset-square.medium
 
     -- ds.row:
     width: hug-content
@@ -30,10 +30,10 @@ inset: $ds.spaces.inset-square.small
 
 -- end: ds.section-row
 
--- ds.section-row:
 
--- ds.column:
+-- ds.section-column:
 align-content: top-left
+inset: $ds.spaces.inset-square.medium
 
 -- ds.heading-large: Own Your Data
 
@@ -101,7 +101,7 @@ Marketplace also contains FifthTry-CDP compatible proprietary and paid apps,
 which you will only run on FifthTry hosting, but you still keep to own the
 data of those apps.
 
--- ds.heading-medium: Power of `fastn`
+-- ds.heading-medium: Power of [`fastn`](https://fastn.com)
 
 FifthTry-CDP headless backends for each domain are available as `fastn` package.
 `fastn` is a programming language and fullstack web framework for building web
@@ -121,9 +121,8 @@ The best way to get started is by asking for help in the
 lots of docs below of how to get started on your own, but the Discord is the
 best place to ask for help.
 
--- end: ds.column
+-- end: ds.section-column
 
--- end: ds.section-row
 
 -- ds.section-row:
 align-content: left
