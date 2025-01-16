@@ -37,9 +37,10 @@ align-content: top-left
 
 -- ds.heading-large: Own Your Data
 
-At FifthTry, our mission is complete data and software ownership for everything
-that runs your life. Today we are too dependent on companies, who use our
-dependence on their services to their own benefit.
+At [FifthTry](https://www.fifthtry.com), our mission is complete data and
+software ownership for everything that runs your life. Today we are too
+dependent on companies, who use our dependence on their services to their own
+benefit.
 
 FifthTry-CDP: Command Data Project aims to put you in complete control of your
 data. This project defines data models and set of headless data APIs to interact
@@ -110,6 +111,15 @@ all are configured uniformly, they all share the same middlewares,
 authentication system, rule engines, backend database, etc etc. Anyone can become
 `fastn` developers in few weeks and maintain these apps.
 
+-- ds.heading-medium: Contributions
+
+Thank you for your interest in contributing to FifthTry-CDP! There are many ways
+to contribute and we appreciate all of them.
+
+The best way to get started is by asking for help in the
+[#cdp channel](https://discord.gg/2jzGWqUF4E) in fastn-stack Discord. We have
+lots of docs below of how to get started on your own, but the Discord is the
+best place to ask for help.
 
 -- end: ds.column
 
