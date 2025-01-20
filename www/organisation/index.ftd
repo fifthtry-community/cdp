@@ -2,4 +2,56 @@
 
 -- ds.heading-large: Organisation
 
+-- ds.heading-medium: cdp_org_company
+
+Fields:
+
+- name
+- parent: if this company is a subsidiary of another company
+- location: City/State/Country
+- website (url)
+
+
+-- ds.heading-medium: cdp_org_team
+
+- name: name of the team
+- company: company this team belongs to
+- parent: if this team is a sub team of another team (company must be null in
+  that case)
+- manager: each team is managed by someone
+
+
+-- ds.heading-medium: cdp_org_employee
+
+- name: name of the employee
+- employee_code: any company specific employee code
+- team: what team the employee belongs to.
+
+
+-- ds.heading-medium: cdp_org_meeting
+
+- name: owner
+- title: every meeting has a title
+- meeting-type: in-person | offline-call | video
+;; https://simonwillison.net/2024/Nov/27/storing-times-for-human-events/
+- intended_time: eg 6pm
+- intended_venue: (best location, that of event creator, esp for remote events)
+- utc: utc time
+- anyone-can-join: if URL can be shared or only allowed member, if anyone can
+  then they may be put in lobby if lobby is true
+- lobby: if anyone joining is put in lobby first
+
+-- ds.heading-medium: cdp_org_meeting_attendant
+
+- employee: (even other company people should be added as employees)
+- email: (if nothing else is known we add email, only one non null)
+- attended: in seconds they attended the video
+- spoken: in seconds when they spoke (system detects if you are speaking)
+- forced-mute: if they are allowed to speak (this can change at run time)
+- forced-video-off: if their video was forced to be off
+- lobby: if they are in lobby
+- approved: if approval was required (approved may be put in lobby as well)
+- can-chat: if they are allowed to chat
+
+
 -- end: ui.page
