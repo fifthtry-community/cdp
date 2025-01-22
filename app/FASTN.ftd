@@ -1,0 +1,34 @@
+-- import: fastn
+
+-- fastn.package: cdp.fifthtry.com
+
+-- fastn.migration: cdp_org_meeting_setup
+
+;; See www/organisation/index.ftd for more details
+CREATE TABLE IF NOT EXISTS "cdp_org_meeting" (
+    "id"             INTEGER PRIMARY KEY,
+    "owner_id"       BIGINT  NOT NULL REFERENCES "fastn_user" ("id") DEFERRABLE INITIALLY DEFERRED,
+    "title"          TEXT NOT NULL,
+    "kind"           TEXT CHECK("kind" == 'scheduled' OR "kind" == 'one-off' OR "kind" == 'recurring' OR "kind" == 'permanent') NOT NULL,
+    "location_type"  TEXT CHECK("location_type" == 'in-person' or "location_type" == 'online') NOT NULL,
+    "location"       TEXT NOT NULL, -- meeting url or actual address for 'in-person' meetings
+    "intended_time"  INTEGER NOT NULL, -- owner's intended time (with their timezone)
+    "intended_venue" INTEGER NOT NULL, -- owner's best location at the time of creating the event
+    "utc_time"       INTEGER NOT NULL, -- same as intended_time "most of the time" (for sorting meetings etc)
+    "who_can_join"   TEXT CHECK("who_can_join" == 'open' or "who_can_join" == 'trusted' or "who_can_join" == 'restricted') NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS "cdp_org_meeting_attendant" (
+    "id"               INTEGER PRIMARY KEY,
+    "user_id"          BIGINT  NOT NULL REFERENCES "fastn_user" ("id") DEFERRABLE INITIALLY DEFERRED,
+    "role"             TEXT CHECK("role" == 'owner' or "role" == 'participant') NOT NULL,
+    "duration_in_secs" INTEGER NOT NULL DEFAULT 0, -- de-normalised from "cdp_org_meeting_event"
+);
+
+CREATE TABLE IF NOT EXISTS "cdp_org_meeting_event" (
+    "id"         INTEGER PRIMARY KEY,
+    "meeting_id" BIGINT NOT NULL REFERENCES "cdp_org_meeting" ("id") DEFERRABLE INITIALLY DEFERRED,
+    "kind"       TEXT, -- 'joined' or 'left'. All possible values in www/organisation/index.ftd
+    "who"        BIGINT NOT NULL REFERENCES "fastn_user" ("id") DEFERRABLE INITIALLY DEFERRED,
+    "when"       INTEGER NOT NULL, -- in utc
+);
