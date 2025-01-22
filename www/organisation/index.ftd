@@ -30,28 +30,61 @@ Fields:
 
 -- ds.heading-medium: cdp_org_meeting
 
-- name: owner
+SQL tables are not great for modelling compared to enum in Rust.
+
+Option 1: For each variant we can create a column
+   pro: simple table / queries
+   pro: too many columns
+   con: data can be invalid
+Option 2: Create more tables (one table for each variant for every enum field)
+   pro: data is always checked
+   con: complex queries / performance issue due to that
+
+
+
+
+- owner: FK to fastn_user table
 - title: every meeting has a title
-- meeting-type: in-person | offline-call | video
+- kind: scheduled (time) | one off | recurring (slug, time) | permanent (slug)
+  (we still allow people to join past scheduled / one off meeting?) yes.
+- location-type: in-person | offline-call | video
+- location: text field with value depending on type (google meet/zoom: then
+  this field will contain the google meet / zoom url)
 ;; https://simonwillison.net/2024/Nov/27/storing-times-for-human-events/
-- intended_time: eg 6pm
-- intended_venue: (best location, that of event creator, esp for remote events)
+- intended-time: eg 6pm
+- intended-venue: (best location, that of event creator, esp for remote events)
 - utc: utc time
-- anyone-can-join: if URL can be shared or only allowed member, if anyone can
-  then they may be put in lobby if lobby is true
-- lobby: if anyone joining is put in lobby first
+- who-can-join: open | trusted | restricted (if URL can be shared or only
+  allowed member, if anyone can then they may be put in lobby if lobby is true)
+
+
 
 -- ds.heading-medium: cdp_org_meeting_attendant
 
-- employee: (even other company people should be added as employees)
-- email: (if nothing else is known we add email, only one non null)
+
+/- employee: fk to employee table (even other company people should be added as employees)
+- user: FK to user table (if the person is employee is a UI concern)
+- role: owner | organiser | panel | guest
+;; attended is de-normalised so we can quickly show who attended the meeeting
 - attended: in seconds they attended the video
-- spoken: in seconds when they spoke (system detects if you are speaking)
 - forced-mute: if they are allowed to speak (this can change at run time)
 - forced-video-off: if their video was forced to be off
 - lobby: if they are in lobby
 - approved: if approval was required (approved may be put in lobby as well)
 - can-chat: if they are allowed to chat
+
+
+-- ds.heading-medium: cdp_org_meeting_event
+
+- meeting: fk to meeting table
+- kind: meeting created | meeting setting changed | title-changed | started
+  speaking | stopped speaking | agenda added | agenda selected | agenda marked
+  completed | agenda marked come back later | note updated | action item created
+  action item deleted etc etc
+- who: who did this
+- when: did they do it
+
+
 
 
 -- end: ui.page
